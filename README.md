@@ -1,5 +1,7 @@
 # Automated External Attack Surface Discovery and Exposure Analysis
 
+**Status:** 🚧 In Progress (Capstone Proposal Stage)
+
 ## Overview
 
 Every organization with an internet presence has an external attack surface — publicly reachable systems, services, APIs, and data that can be exploited by threat actors. Most organizations lack an accurate, up-to-date inventory of these assets (subdomains, URLs, documents, API keys, cloud storage links), leading to "Shadow IT" such as forgotten staging servers and undocumented APIs that create hidden, high-risk exposures. Lookalike/similar domains also raise the risk of phishing and domain spoofing.
