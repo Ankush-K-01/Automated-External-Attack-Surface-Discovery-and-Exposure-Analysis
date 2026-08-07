@@ -1,6 +1,6 @@
 # Automated External Attack Surface Discovery and Exposure Analysis
 
-**Status:** 🚧 In Progress (Capstone Proposal Stage)
+**Status:** 🚧 In Progress
 
 ## Overview
 
