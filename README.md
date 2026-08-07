@@ -14,10 +14,6 @@ This project builds an **Automated External Attack Surface Discovery and Exposur
 - **Delta Analysis** – Compare consecutive scans to detect newly exposed assets and track remediation progress over time.
 - **Report Generation** – Produce a structured report (Markdown) with a screenshot gallery of findings.
 
-## Note
-
-This is a college capstone project (M.Tech Cyber Security). All code in this repository is AI-generated.
-
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
