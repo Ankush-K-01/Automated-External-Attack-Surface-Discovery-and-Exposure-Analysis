@@ -14,7 +14,7 @@ This project builds an **Automated External Attack Surface Discovery and Exposur
 - **Deep Asset Crawling & Scraping** – Crawl and scrape public-facing assets (subdomains, URLs, documents, API keys, cloud storage links) to surface exposures manual enumeration would miss.
 - **AI-Based Validation & Analysis** – Use AI to classify findings (Confirmed / Likely / False Positive) and generate an executive summary, risk analysis, and recommendations.
 - **Delta Analysis** – Compare consecutive scans to detect newly exposed assets and track remediation progress over time.
-- **Report Generation** – Produce a structured report (Markdown) with a screenshot gallery of findings.
+- **Report Generation** – Produce a structured report.
 
 ## License
 
