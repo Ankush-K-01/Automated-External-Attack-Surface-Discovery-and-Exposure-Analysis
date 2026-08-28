@@ -82,44 +82,58 @@ Each stage uses structured records associated with a common scope identifier. A 
 
 ### 1. Scope Management
 
-The system begins by validating and normalizing the target domain and creating a unique scope identifier. This identifier is used to maintain traceability throughout the assessment.
+The system validates and normalizes the target domain, creates a unique scope identifier, and initializes the assessment workflow. The scope identifier is maintained throughout the assessment to provide traceability between the target and collected results.
 
 ### 2. Asset Discovery
 
-The discovery layer performs external reconnaissance to identify:
+The discovery layer performs external reconnaissance using multiple sources to identify publicly observable assets, including:
 
 - Subdomains
-- DNS observations
+- DNS records
 - IP addresses
 - Open ports
 - Services
 - URLs
-- Web-related observations
+- Historical and web-related observations
 
-Multiple discovery sources are used to reduce dependency on a single enumeration tool.
+The use of multiple discovery sources reduces dependency on a single enumeration tool.
 
-### 3. Identity Correlation and Attack Surface Inventory
+### 3. Identity Correlation
 
-Discovered information is correlated using relationships between domains, IP addresses, certificates, ASN information, and other identity-related observations.
+Discovered assets are correlated with identity-related information such as:
 
-The inventory stage normalizes and consolidates these observations into an asset-centric representation and reduces duplicate or overlapping records.
+- Domains
+- IP addresses
+- SSL/TLS certificates
+- ASN information
+- Ownership-related observations
 
-### 4. Exposure Discovery
+This stage establishes relationships between otherwise separate discovery records.
 
-The system analyzes discovered assets for security exposures using multiple security-analysis techniques, including:
+### 4. Attack Surface Inventory
+
+The inventory module normalizes and consolidates discovery and correlation results into a unified, asset-centric representation.
+
+Duplicate or overlapping observations are merged so that subsequent security analysis can operate on a structured view of the external attack surface.
+
+### 5. Exposure Discovery
+
+The system analyzes the unified asset inventory for security exposures using multiple security-analysis techniques, including:
 
 - Vulnerability analysis
 - TLS analysis
-- Technology identification
+- Technology fingerprinting
 - Directory and parameter discovery
 - Web security analysis
 - Subdomain takeover detection
 
-The resulting observations are normalized into security findings.
+The collected observations are normalized into structured security findings.
 
-### 5. Brand and Email Intelligence
+### 6. Brand and Email Intelligence
 
-This module analyzes externally observable brand and email-security information, including:
+This module identifies externally observable brand and email-security risks associated with the target organization.
+
+The analysis includes:
 
 - Lookalike domains
 - Lookalike certificates
@@ -128,33 +142,39 @@ This module analyzes externally observable brand and email-security information,
 - DMARC
 - BIMI
 
-This extends the attack-surface view beyond infrastructure and application security into brand and email-related risks.
+This extends the assessment beyond infrastructure and application security to include brand and email-related exposure.
 
-### 6. Threat Intelligence Enrichment
+### 7. Threat Intelligence Enrichment
 
-Security findings are enriched using:
+Security findings are enriched with external threat intelligence to provide additional vulnerability and exploitation context.
 
-- **NVD** – CVE and vulnerability metadata
+The project uses:
+
+- **NVD** – CVE and vulnerability information
 - **CISA KEV** – Known Exploited Vulnerabilities
-- **FIRST EPSS** – Exploitability probability
+- **EPSS** – Exploitability probability
 
-This additional context helps distinguish vulnerability severity from exploitability and known exploitation.
+This enrichment provides additional context for understanding the significance and exploitability of identified vulnerabilities.
 
-### 7. AI-Assisted Validation and Risk Prioritization
+### 8. AI-Assisted Validation and Risk Prioritization
 
-AI is used as a supporting validation mechanism to evaluate the credibility of structured findings, identify potential false positives, and provide remediation guidance.
+AI is used as a supporting validation mechanism for structured security findings. It assists in evaluating finding credibility, identifying potential false positives, and providing remediation guidance.
 
-AI does not act as the sole source of truth. A separate deterministic risk-scoring process calculates the final risk priority using available security and threat context.
+Risk prioritization is performed separately using a deterministic scoring mechanism based on available security and threat context. AI is therefore not treated as the sole source of the final risk decision.
 
-### 8. Unified Reporting
+### 9. Unified Reporting
 
-The final assessment data is organized into structured reports and can be exported in:
+The reporting module consolidates the finalized assessment data and presents the results in structured formats.
+
+Supported output formats include:
 
 - HTML
 - PDF
 - XLSX
 - JSON
 - CSV
+
+The reporting layer provides both human-readable reports and machine-readable outputs for further analysis.
 
 ## Technology Stack
 
