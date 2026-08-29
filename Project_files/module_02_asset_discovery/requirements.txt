@@ -1,0 +1,9 @@
+fastapi==0.115.12
+SQLAlchemy==2.0.40
+pydantic==2.11.3
+httpx==0.28.1
+dnspython==2.7.0
+python-whois==0.9.5
+rapidfuzz==3.13.0
+geoip2==5.0.1
+pytest==8.3.5

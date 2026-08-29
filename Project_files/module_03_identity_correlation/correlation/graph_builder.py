@@ -1,0 +1,3 @@
+"""Idempotent, scope-namespaced Neo4j graph writer."""
+def merge_asset(tx,scope_id:str,subdomain:str,ip:str|None,asn:str|None,provider:str|None)->None:
+ tx.run("MERGE (s:Subdomain {scope_id:$scope, name:$sub}) " "MERGE (i:IP {scope_id:$scope, value:$ip}) MERGE (s)-[:RESOLVES_TO]->(i) " "FOREACH (_ IN CASE WHEN $asn IS NULL THEN [] ELSE [1] END | MERGE (a:ASN {scope_id:$scope,value:$asn}) MERGE (i)-[:BELONGS_TO_ASN]->(a)) " "FOREACH (_ IN CASE WHEN $provider IS NULL THEN [] ELSE [1] END | MERGE (p:CloudProvider {name:$provider}) MERGE (i)-[:HOSTED_ON]->(p))",scope=scope_id,sub=subdomain,ip=ip,asn=asn,provider=provider)
