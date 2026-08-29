@@ -349,7 +349,7 @@ The primary contribution is the **integration of these capabilities into a cohes
 
 ## Screenshot
 
-<img width="1917" height="906" alt="Screenshot 2026-08-27 112902" src="https://github.com/user-attachments/assets/d5392cb6-40f2-423d-97d6-5383ede23994" />
+<img width="1917" height="906" alt="image" src="https://github.com/user-attachments/assets/71e60ea6-7791-4c95-81ca-c0a1405ebf00" />
 
 
 ## License
