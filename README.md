@@ -347,6 +347,10 @@ This project integrates established reconnaissance, exposure-analysis, threat-in
 
 The primary contribution is the **integration of these capabilities into a cohesive External Attack Surface Discovery and Exposure Analysis pipeline**, providing a structured way to discover external assets, correlate security information, enrich findings, validate results, prioritize risks, and generate unified reports.
 
+## Screenshot
+
+<img width="1917" height="906" alt="Screenshot 2026-08-27 112902" src="https://github.com/user-attachments/assets/d5392cb6-40f2-423d-97d6-5383ede23994" />
+
 
 ## License
 
